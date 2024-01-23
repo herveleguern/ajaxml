@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<lesVoitures>
+  <voiture>
+    <modele>Twingo</modele>
+    <marque>Renault</marque>
+    <kms>45000</kms>
+    <annee>2020</annee>
+  </voiture>
+  <voiture>
+      <modele>Megane</modele>
+    <marque>Renault</marque>
+    <kms>120000</kms>
+    <annee>2018</annee>
+  </voiture>
+<voiture>
+      <modele>Aigo</modele>
+    <marque>Toyota</marque>
+    <kms>5000</kms>
+    <annee>2023</annee>
+  </voiture>
+  </lesVoitures>

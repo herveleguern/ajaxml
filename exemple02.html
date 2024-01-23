@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<!-- [source] https://www.w3schools.com/js/tryit.asp?filename=tryjs_ajax_xml2 -->
+<html>
+<style>
+table,th,td {
+  border : 1px solid black;
+  border-collapse: collapse;
+}
+th,td {
+  padding: 5px;
+}
+</style>
+<body>
+<h2>The XMLHttpRequest Object</h2>
+<button type="button" onclick="loadDoc()">Voir les voitures</button>
+<br><br>
+<table id="demo"></table>
+
+<script>
+function loadDoc() {
+  const xhttp = new XMLHttpRequest();
+  xhttp.onload = function() {
+    myFunction(this);
+  }
+  xhttp.open("GET", "voiture.xml");
+  xhttp.send();
+}
+function myFunction(xml) {
+  const xmlDoc = xml.responseXML;
+  const x = xmlDoc.getElementsByTagName("voiture");
+  let table="<tr><th>Modele</th><th>Marque</th></tr>";
+  for (let i = 0; i <x.length; i++) { 
+    table += "<tr><td>" +
+    x[i].getElementsByTagName("modele")[0].firstChild.nodeValue +
+    "</td><td>" +
+    x[i].getElementsByTagName("marque")[0].firstChild.nodeValue +
+    "</td></tr>";
+  }
+  document.getElementById("demo").innerHTML = table;
+}
+</script>
+
+</body>
+</html>
